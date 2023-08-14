@@ -4,30 +4,30 @@ int main()
 
 {
     int n,m;
-    cin>>n>>m;
+    cin>>n,m;
 
     vector<int> v;
 
-    for(int i=0; i<m ; i++)
+    for(int i= 0; i<m ; i++)
     {
         int ele;
         cin>>ele;
-
         v.push_back(ele);
     }
 
-    sort(v.begin() , v.end());
-    int min = v[0];
-
-    for(int i= 0; i<v.size() ; i++)
+    for(int i= 0; i<m ; i++)
     {
-        int a = v[i+1] - v[i];
-
-        if(a < min)
+        for(int j = 0; j < n ; j++)
         {
-            min = a;
+            if(i == j)
+            {
+                continue;
+            }
+            else
+            {
+                int dif = abs( v[i] - v[j]);
+                cout<<dif<<endl;
+            }
         }
     }
-
-    cout<<min<<endl;
 }

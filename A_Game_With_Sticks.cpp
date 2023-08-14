@@ -5,12 +5,21 @@ int main()
     int n,m;
     cin>>n>>m;
 
-    if(((abs(n+m))/2)%2 == 0)
+    int count = 0;
+
+    while( n > 0 && m >0)
+    {
+        n-- , m--;
+        count++;
+    }
+
+    if(count % 2 == 0)
     {
         cout<<"Malvika"<<endl;
     }
-    else 
+    else
     {
         cout<<"Akshat"<<endl;
     }
+    
 }

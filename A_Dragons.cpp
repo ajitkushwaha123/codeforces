@@ -5,50 +5,38 @@ int main()
     int s,n;
     cin>>s>>n;
 
-    vector<pair<int, int>> v;
+    vector<pair<int, int> > p;
 
-    for(int i=0; i<n ; i++)
+    for(int i=0; i<n; i++)
     {
         int a,b;
         cin>>a>>b;
 
-        v.push_back(a,b);
+        p.push_back(make_pair(a,b));
     }
 
-    // for(int i=0; i<v.size() ; i++)
-    // {
-    //     cout<<v[i];
-    // }
+    sort(p.begin() , p.end());
 
+    int count = 0;
 
+    for(int i=0 ;i<p.size() ; i++)
+    {
+        if(p[i].first < s)
+        {
+            s += p[i].second;
+            count++;
+        }else
+        {
+            break;
+        }
+    }
 
-
-
-
-    // vector<int> v;
-    // vector<int> w;
-
-    // for(int i=0; i<n; i++)
-    // {
-    //     int a;
-    //     cin>>a;
-    //     v.push_back(a);
-
-    //     int b;
-    //     cin>>b;
-
-    //     w.push_back(b);
-    // }
-
-    // sort(v.begin() , v.end());
-
-    // for(int i =0; i<v.size() ; i++)
-    // {
-    //     cout<<v[i]<<" "; 
-    // }
-
-    // for(int i =0; i<v.size() ; i++)
-    // {
-    //     cout<<w[i]<<" "; 
-    // }
+    if(count == n)
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
 }
